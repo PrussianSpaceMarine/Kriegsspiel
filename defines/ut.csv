@@ -1,0 +1,7 @@
+t,speed,sz,fMult
+Command,5,0.002,0
+Infantry,3.5,0.0005,1
+Cavalry,5,0.002,1.3
+Artillery,3.5,0.05,0
+Messenger,10,0.005,0
+Patrol,5,0.005,0
