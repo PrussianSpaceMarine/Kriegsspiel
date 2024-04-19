@@ -32,7 +32,7 @@ if mName ~= "qq"
                 case 0.3 % Extreme terrain
                     mov(i,j) = 1.67;
                 case 0.1 % River
-                    mov(i,j) = 20;
+                    mov(i,j) = 5;
             end
 
         end
