@@ -39,7 +39,17 @@ if mName ~= "qq"
         end
     end
 
+    % Map size
+    sz = size(map);
+
     % Pull units
     u = readtable("maps/" + mName + "/units.csv","ReadVariableNames",true);
+    ucount = height(u); % Unit count
+
+    % Initialize movement weight matrices
+    for i = 1:ucount
+        matrix_f{i} = ones(sz); % Friendly
+        matrix_e{i} = ones(sz); % Enemies
+    end
 
 end
