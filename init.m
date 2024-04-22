@@ -6,7 +6,7 @@ addpath("pathfinding");
 addpath("control");
 
 % Pull global variables
-global ut
+global u um ut
 
 % Unit type information
 ut = readtable("unitInfo.csv");
@@ -42,8 +42,17 @@ if mName ~= "qq"
     % Map size
     sz = size(map);
 
+    % Transition times between stances
+    transitions = [
+    Inf 2 2 0 24;
+    2 Inf 2 Inf Inf;
+    2 2 Inf 0 24;
+    Inf 0 Inf Inf Inf;
+    24 24 24 24 Inf];
+
     % Pull units
     u = readtable("maps/" + mName + "/units.csv","ReadVariableNames",true);
+    um = readtable("maps/" + mName + "/unitMove.csv","ReadVariableNames",true);
     ucount = height(u); % Unit count
 
     % Initialize movement weight matrices
